@@ -41,17 +41,6 @@ class Word2VecApi(AbstractApi):
         Returns:
             XXXX
 
-{'doc': 
-    {'doc_text': 'Michael Jackson was a famous US musician', 
-    'annotation_set': ['per', 'loc'], 
-    'spans': [
-        {'start': 0, 'end': 15, 'type': 'PER'}, 
-        {'start': 29, 'end': 31, 'type': 'LOC'}
-        ], 
-     'title': 'None'
-     }, 
-     'type': 'high_level'
-}
         """
 
         print("Inference Word2Vec model")

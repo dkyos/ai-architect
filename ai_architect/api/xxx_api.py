@@ -19,16 +19,16 @@ from ai_architect.api.abstract_api import AbstractApi
 
 class XxxApi(AbstractApi):
     """
-    Word2Vec API
+    XXX API
     """
     def __init__(self):
         self.model = None
 
     def load_model(self):
         """
-        Load Word2Vec model
+        Load XXX model
         """
-        print("Load Word2Vec model")
+        print("Load XXX model")
         #######
 
     def inference(self, doc):
@@ -40,21 +40,9 @@ class XxxApi(AbstractApi):
 
         Returns:
             XXXX
-
-{'doc': 
-    {'doc_text': 'Michael Jackson was a famous US musician', 
-    'annotation_set': ['per', 'loc'], 
-    'spans': [
-        {'start': 0, 'end': 15, 'type': 'PER'}, 
-        {'start': 29, 'end': 31, 'type': 'LOC'}
-        ], 
-     'title': 'None'
-     }, 
-     'type': 'high_level'
-}
         """
 
-        print("Inference Word2Vec model")
+        print("Inference XXX model")
         print("Doc: " + doc)
         ret = {'doc_text': doc, 'annotation_set': []}
         spans = []

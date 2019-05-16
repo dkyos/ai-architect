@@ -36,6 +36,7 @@ def format_response(resp_format, parsed_doc):
     Returns:
         formatted response
     """
+    print("service: format_response")
     logger.info('preparing response JSON')
     ret = None
     if (resp_format == "json") or ('json' in resp_format) or (not resp_format):
@@ -56,6 +57,7 @@ def parse_headers(req_headers):
     Returns:
         dict: dictionary hosting the request headers
     """
+    print("service: parse_headers")
     headers_lst = ["CONTENT-TYPE", "CONTENT-ENCODING", "RESPONSE-FORMAT",
                    "CLEAN", "DISPLAY-POST-PREPROCCES",
                    "DISPLAY-TOKENS", "DISPLAY-TOKEN-TEXT", "IS-HTML"]
@@ -75,6 +77,7 @@ def set_headers(res):
     Args:
         res (:obj:`falcon.Response`): the request
     """
+    print("service: set_headers")
     res.set_header('Access-Control-Allow-Origin', '*')
     res.set_header("Access-Control-Allow-Credentials", "true")
     res.set_header('Access-Control-Allow-Methods', "GET,HEAD,OPTIONS,POST,PUT")
@@ -91,6 +94,7 @@ def package_home(gdict):
     """
     help function for running paths from out-of-class scripts
     """
+    print("service: package_home")
     filename = gdict["__file__"]
     return os.path.dirname(filename)
 
@@ -105,18 +109,22 @@ def extract_module_name(model_path):
     Returns:
         str: the modules name
     """
+    print("service: extract_module_name: " + model_path)
     class_name = "".join(model_path.split(".")[0].title().split("_"))
+    print("service: extract_module_name: " + class_name)
     return class_name
 
 
 class Service(object):
     """Handles loading and inference using specific models"""
     def __init__(self, service_name):
+        print("service: Service: init: " + service_name)
         self.service_type = None
         self.is_spacy = False
         self.service = self.load_service(service_name)
 
     def get_paragraphs(self):
+        print("service: Service: get_paragraphs")
         return self.service.get_paragraphs()
 
     # pylint: disable=eval-used
@@ -131,6 +139,7 @@ class Service(object):
         Returns:
             the service API output
         """
+        print("service: Service: get_service_inference")
         logger.info('sending documents to parser')
         response_data = []
         for i, doc in enumerate(docs):
@@ -159,6 +168,7 @@ class Service(object):
         Returns:
             The loaded service
         """
+        print("service: Service: load_service: " + name)
         with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "services.json")) \
                 as prop_file:
             properties = json.load(prop_file)

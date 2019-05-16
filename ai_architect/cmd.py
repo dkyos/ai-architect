@@ -43,8 +43,9 @@ class ServerCommand(object):
     @staticmethod
     def run_server(args):
         port = args.port
-        serve_file = LIBRARY_PATH / 'server' / 'serve.py'
+        serve_file = LIBRARY_PATH / 'server' / 'rest_api.py'
         cmd_str = 'hug -p {} -f {}'.format(port, serve_file)
+        print("------------\n" + cmd_str + "\n------------\n")
         run_cmd(cmd_str)
 
 # sub commands list
