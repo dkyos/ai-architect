@@ -1,6 +1,6 @@
 {
   "api_folders_path" : "ai_architect.api.",
-  "bist" : {"file_name": "bist_parser_api.py", "type": "core", "spacy": true},
+  "word2vec" : {"file_name": "word2vec_api.py", "type": "high_level"},
   "ner" : {"file_name": "ner_api.py", "type": "high_level"},
   "machine_comprehension" : {"file_name": "machine_comprehension_api.py", "type": "high_level"},
   "intent_extraction" : {"file_name": "intent_extraction_api.py", "type": "high_level"}

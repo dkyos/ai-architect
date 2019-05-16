@@ -31,14 +31,16 @@ api.http.add_middleware(hug.middleware.CORSMiddleware(api, max_age=10))
 
 
 def prefetch_models():
+    print("serve: prefetch_models")
     #models = ['machine_comprehension', 'bist', 'ner', 'intent_extraction']
-    models = ['ner']
+    models = ['word2vec', 'ner']
     for model in models:
         services[model] = Service(model)
 
 
 @hug.get('/comprehension_paragraphs')
 def get_paragraphs():
+    print("serve: comprehension_paragraphs")
     if not services['machine_comprehension']:
         services['machine_comprehension'] = Service('machine_comprehension')
     return services['machine_comprehension'].get_paragraphs()
@@ -47,6 +49,7 @@ def get_paragraphs():
 # pylint: disable=inconsistent-return-statements
 @hug.post()
 def inference(request, body, response):
+    print("serve: inference")
     """Makes an inference to a certain model"""
     print(body)
     if request.headers.get('CONTENT-TYPE') == 'application/gzip':
@@ -88,6 +91,7 @@ def inference(request, body, response):
 
 @hug.static('/')
 def static():
+    print("serve: static")
     """Statically serves a directory to client"""
     return [path.join(path.dirname(path.realpath(__file__)), 'angular-ui/dist/angular-ui')]
     # return [os.path.realpath(os.path.join('./', 'server/angular-ui/dist/angular-ui'))]
@@ -96,6 +100,7 @@ def static():
 @hug.get(['/home', '/visual/{page}', '/annotate/{page}', '/machine_comprehension'],
          output=hug.output_format.file)
 def get_index():
+    print("serve: get_index")
     index = path.join(path.dirname(path.realpath(__file__)),
                       'angular-ui/dist/angular-ui/index.html')
     return index
