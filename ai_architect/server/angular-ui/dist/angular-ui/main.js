@@ -13768,16 +13768,16 @@
             var Qg = function() {
                     function t() {
                         this.categories = ["Visual", "Annotate"], this.models = [{
-                            name: "Word2Vec",
-                            url: "/visual/bist",
+                            name: "xxx",
+                            url: "/visual/xxx",
                             description: "Extract relations between sentence words. The model is based on the BIST Dependency Parser"
                         }, {
                             name: "Named Entity Recognition",
                             url: "/annotate/ner",
                             description: "Named Entity Recognition (NER) is a basic Information extraction task in which words (or phrases) are classified into pre-defined entity groups."
                         }, {
-                            name: "Intent Extraction",
-                            url: "/annotate/intent_extraction",
+                            name: "word2vec",
+                            url: "/annotate/word2vec",
                             description: "Intent extraction is a type of Natural-Language-Understanding (NLU) task that helps understand the type of action (intent) conveyed in sentences and tokens contributing to the understanding of the scenario."
                         }, {
                             name: "Machine Reading Comprehension",
@@ -21298,9 +21298,9 @@
                                 linkText: "The model is based on a multi-task Bi-LSTM model with CRF classifier",
                                 examples: ["even though Intel is a big organization, purchasing Mobileye last year had a huge positive impact", "Michael Jackson was a famous US musician", "Find me the best restaurant in New York"]
                             },
-                            intent_extraction: {
-                                name: "Intent Extraction",
-                                requestModel: "intent_extraction",
+                            word2vec: {
+                                name: "word2vec",
+                                requestModel: "word2vec",
                                 description: "Intent extraction is a type of Natural-Language-Understanding (NLU) task that helps understand the type of action (intent) conveyed in sentences and tokens contributing to the understanding of the scenario. The mode is based on a ",
                                 link: "http://nlp_architect.nervanasys.com/intent.html",
                                 linkText: "multi-task Bi-LSTM model with CRF classifier",
@@ -21323,7 +21323,7 @@
                                 color: "#000000",
                                 wordSpacing: 50
                             });
-                            this.colorService.addColorToAnnotationSet(t.annotation_set), this.docTitle = "None" !== t.title ? t.title : "", "intent_extraction" === this.requestModel && this.docTitle && (this.docTitle = "Intent: " + this.docTitle), n.render(t.doc_text, t.spans, t.annotation_set)
+                            this.colorService.addColorToAnnotationSet(t.annotation_set), this.docTitle = "None" !== t.title ? t.title : "", "word2vec" === this.requestModel && this.docTitle && (this.docTitle = "Intent: " + this.docTitle), n.render(t.doc_text, t.spans, t.annotation_set)
                         } else this.displayError("Error, bad response from server - no service type selected")
                     }, t.prototype.displayError = function(t) {
                         this.snackBar.open("Error: " + t, "Done", {
@@ -22825,7 +22825,7 @@
                     ["color", "primary"]
                 ], null, null, null, null, null)), (t()(), Es(1, 0, null, null, 1, "h1", [
                     ["class", "mat-display text-center h1_title"]
-                ], null, null, null, null, null)), (t()(), jl(-1, null, ["Word2Vec"])), (t()(), Es(3, 0, null, null, 35, "div", [
+                ], null, null, null, null, null)), (t()(), jl(-1, null, ["xxx"])), (t()(), Es(3, 0, null, null, 35, "div", [
                     ["class", "container"]
                 ], null, null, null, null, null)), (t()(), Es(4, 0, null, null, 31, "mat-card", [
                     ["class", "overlap mat-card"]

@@ -1,5 +1,3 @@
-# ******************************************************************************
-# Copyright 2017-2018 Intel Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,7 +31,7 @@ api.http.add_middleware(hug.middleware.CORSMiddleware(api, max_age=10))
 def prefetch_models():
     print("serve: prefetch_models")
     #models = ['machine_comprehension', 'bist', 'ner', 'intent_extraction']
-    models = ['word2vec', 'ner']
+    models = ['word2vec', 'ner', 'xxx']
     for model in models:
         services[model] = Service(model)
 
