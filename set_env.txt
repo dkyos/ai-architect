@@ -1,0 +1,1 @@
+export PYTHONPATH=/home/dkyun77/dkyos/public_github/ai-architect
