@@ -194,3 +194,5 @@ if __name__ == "__main__":
     print("================")
     print(wd2vec_model.wv.vocab)
     print("================")
+    print(wd2vec_model.most_similar("woman"))
+    print("================")

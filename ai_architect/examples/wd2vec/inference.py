@@ -44,7 +44,6 @@ if __name__ == "__main__":
 
     #print(args.wd)
     #print(wd2vec_model.wv.vocab)
-    #print(wd2vec_model[wd2vec_model.wv.vocab])
 
     print("word vector for the WD \'" + args.wd + "\':"
-        , wd2vec_model[args.wd])
+        , wd2vec_model.most_similar(args.wd))

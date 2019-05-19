@@ -190,7 +190,7 @@ class WD2vec:
             self.model.save(wd2vec_model_file)
 
     @classmethod
-    def load(cls, wd2vec_model_file, word2vec_format=True):
+    def load(self, wd2vec_model_file, word2vec_format=True):
         """
         Load the wd2vec model.
 
@@ -202,7 +202,6 @@ class WD2vec:
         Returns:
             wd2vec model to load
         """
-        return Word2Vec.load(wd2vec_model_file)
+        self.model = Word2Vec.load(wd2vec_model_file)
+        return self.model
 
-        logger.error('invalid value for \'word_ngrams\'')
-        return None
