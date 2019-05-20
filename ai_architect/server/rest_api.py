@@ -89,17 +89,15 @@ def inference(request, body, response):
     else:
         return ret
 
-
 @hug.static('/')
 def static():
     print("rest_api: static")
     """Statically serves a directory to client"""
-    return [path.join(path.dirname(path.realpath(__file__)), 'angular-ui/dist/angular-ui')]
-    # return [os.path.realpath(os.path.join('./', 'server/angular-ui/dist/angular-ui'))]
+    return [path.join(path.dirname(path.realpath(__file__)), 'client-ui')]
 
+#@hug.get(['/home', '/visual/{page}', '/annotate/{page}', '/machine_comprehension'],
+#         output=hug.output_format.file)
 
-@hug.get(['/home', '/visual/{page}', '/annotate/{page}', '/machine_comprehension'],
-         output=hug.output_format.file)
 def get_index():
     print("rest_api: get_index")
     index = path.join(path.dirname(path.realpath(__file__)),
